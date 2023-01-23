@@ -28,18 +28,14 @@ export function App() {
   return (
     <section className="App">
       {
-        users.map((user) => {
-          const { userName, isFollowing, name } = user
-
-          return (
+        users.map(({ userName, isFollowing, name }) => (
             <TwitterFollowCar
               userName={userName}
               name={name}
               initialIsFollowing={isFollowing}
               key={userName}
             />
-          )
-        })
+        ))
       }
     </section>
   )
